@@ -36,26 +36,27 @@
 {% block menu %}
     <div class="top-block">
         <nav>
-            <div class="logo"><img src="{{ asset('assets/img/logo.png') }}"></div>
+            <div class="logo">
+                <a href="{{ path('homepage') }}"><img src="{{ asset('assets/img/logo.png') }}"></a>
+            </div>
             <ul class="topmenu">
-                <li><a href="">Главная</a></li>
+                <li><a href="{{ path('homepage') }}">Главная</a></li>
                 <li><a href="#services" class="down">УСЛУГИ</a>
-                    <!--                <ul class="submenu">-->
-                    <!--                    <li><a href="">Дизайн</a></li>-->
-                    <!--                    <li><a href="">Проддвижение</a></li>-->
-                    <!--                    <li><a href="">Техническая поддержка</a></li>-->
-                    <!--                    <li><a href=""></a></li>-->
-                    <!--                </ul>-->
+                    {#<ul class="submenu">#}
+                    {#<li><a href="">Дизайн</a></li>#}
+                    {#<li><a href="">Проддвижение</a></li>#}
+                    {#<li><a href="">Техническая поддержка</a></li>#}
+                    {#<li><a href=""></a></li>#}
+                    {#</ul>#}
                 </li>
                 <li><a href="#why-we">Почему мы?</a></li>
                 <? /** TODO : блок скрыт  классом hidden-block */  ?>
                 <li class="hidden-block"><a href="#portfolio" class="down">Портфолио</a>
-
-                    <!--                <ul class="submenu">-->
-                    <!--                    <li><a href="">Лендинг</a></li>-->
-                    <!--                    <li><a href="">Магазины</a></li>-->
-                    <!--                    <li><a href="">Сервисы/Услуги</a></li>-->
-                    <!--                </ul>-->
+                    {#<ul class="submenu">#}
+                    {#<li><a href="">Лендинг</a></li>#}
+                    {#<li><a href="">Магазины</a></li>#}
+                    {#<li><a href="">Сервисы/Услуги</a></li>#}
+                    {#</ul>#}
                 </li>
                 <li><a href="#contacts">Контакты</a></li>
                 <li><a href="#price">Цены</a></li>
@@ -69,7 +70,7 @@
 
                 <a href="{{ path('app_login') }}">
                     <img class="icon-sign-in icon-opportunities opportunities-icon-background"
-                                                       src="{{ asset('assets/img/icon/icon-sign-in.png') }}">
+                         src="{{ asset('assets/img/icon/icon-sign-in.png') }}">
                 </a>
 
                 <a href="{{ path('app_logout') }}">
@@ -109,12 +110,6 @@
 
 {# основной контент страницы #}
 {% block body %}{% endblock %}
-
-
-
-
-
-
 
 
 {# #}
@@ -183,13 +178,11 @@
 
 
 {# библиотека JQ #}
-<script src="{{ asset('assets/lib/jquery/jquery.min.js') }}"></script>
-<script async>
+<script  src="{{ asset('assets/lib/jquery/jquery.min.js') }}"></script>
 
-</script>
 
 {# дополнительный JS #}
-<script>
+<script async>
     {% block javascripts %}{% endblock %}
 </script>
 {# основной JS #}

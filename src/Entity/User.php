@@ -44,7 +44,10 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="json")
      */
-    private $roles = [];
+    private $roles = [
+//        'ROLE_ADMIN',
+        'ROLE_USER'
+    ];
 
     /**
      * @ORM\Column(type="datetime", nullable=true)

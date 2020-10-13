@@ -7,6 +7,7 @@
  */
 namespace App\Controller;
 
+use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -18,6 +19,11 @@ class HomepageController extends AbstractController
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function index() {
+
+        /** @var User $user */
+        $user = $this->getUser();
+
+        dump($user->getRoles());
 
         $num = random_int(0,100);
 

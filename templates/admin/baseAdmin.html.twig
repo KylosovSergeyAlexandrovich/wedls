@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    {#seo инфрмация#}
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="{% block description %}{% endblock %}">
+    <meta name="keywords" content="{% block keywords %}{% endblock %}">
+
+    {# Favicons #}
+    <link href="{{ asset('assets/img/favicon.ico') }}" rel="icon">
+    {# основное стили сайта #}
+    <link href="{{ asset('assets/admin/css/style-admin.css') }}" rel="stylesheet"/>
+
+
+    {# добавочные ссылки #}
+    {% block heading %}{% endblock %}
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Разработка сайтов и веб-приложений">
+    <meta property="og:url" content="https://wedls.com/">
+    <meta property="og:image" content="{{ asset('assets/img/og/006.webp') }}">
+    <meta property="business:contact_data:street_address" content="Сызранова">
+    <meta property="business:contact_data:locality" content="Таганрог">
+    <meta property="business:contact_data:region" content="Ростовская область">
+    <meta property="business:contact_data:postal_code" content="347949">
+    <meta property="business:contact_data:country_name" content="Russia">
+    <link rel="canonical" href="https://wedls.com/"/>
+
+
+</head>
+<body>
+
+{# меню #}
+{% block menu %}
+
+{% endblock %}
+
+{# основной контент страницы #}
+{% block body %}{% endblock %}
+
+
+{# #}
+{#{% block footer %}{% endblock %}#}
+
+
+
+{# библиотека JQ #}
+<script  src="{{ asset('assets/lib/jquery/jquery.min.js') }}"></script>
+
+
+{# дополнительный JS #}
+<script async>
+    {% block javascripts %}{% endblock %}
+</script>
+{# основной JS #}
+<script src="{{ asset('assets/admin/js/all-script-admin.js') }}"></script>
+
+</body>
+</html>
+
+
